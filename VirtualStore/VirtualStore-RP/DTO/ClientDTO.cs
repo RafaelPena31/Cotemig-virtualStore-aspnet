@@ -8,7 +8,7 @@ namespace VirtualStore_RP.DTO
     public class ClientDTO
     {
         private int id;
-        private string name, cpf, phone, email, password;
+        private string name, type, cpf, phone, email, password;
 
         public int Id { get => id; set => id = value; }
 
@@ -16,15 +16,32 @@ namespace VirtualStore_RP.DTO
         {
             set
             {
-                if(value != string.Empty)
+                if (value != string.Empty)
                 {
                     this.name = value;
-                } else
+                }
+                else
                 {
                     throw new Exception("Campo nome obrigatório");
                 }
             }
             get { return this.name; }
+        }
+
+        public string Type
+        {
+            set
+            {
+                if (value != string.Empty)
+                {
+                    this.type = value;
+                }
+                else
+                {
+                    throw new Exception("Campo tipo obrigatório");
+                }
+            }
+            get { return this.type; }
         }
 
         public string Cpf

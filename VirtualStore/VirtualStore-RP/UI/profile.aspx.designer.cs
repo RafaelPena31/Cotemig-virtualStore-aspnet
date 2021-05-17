@@ -11,7 +11,7 @@ namespace VirtualStore_RP.UI
 {
 
 
-    public partial class searchProduct
+    public partial class profile
     {
 
         /// <summary>
@@ -42,30 +42,48 @@ namespace VirtualStore_RP.UI
         protected global::System.Web.UI.WebControls.HyperLink IndexRedirect;
 
         /// <summary>
-        /// Controle txtProductSearch.
+        /// Controle ClientGrid.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtProductSearch;
+        protected global::System.Web.UI.WebControls.GridView ClientGrid;
 
         /// <summary>
-        /// Controle btnSearch.
+        /// Controle AddressGrid.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSearch;
+        protected global::System.Web.UI.WebControls.GridView AddressGrid;
 
         /// <summary>
-        /// Controle gridViewProduct.
+        /// Controle BtnRegisterAddress.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gridViewProduct;
+        protected global::System.Web.UI.WebControls.Button BtnRegisterAddress;
+
+        /// <summary>
+        /// Controle snackbarOK.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label snackbarOK;
+
+        /// <summary>
+        /// Controle snackbarError.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label snackbarError;
     }
 }

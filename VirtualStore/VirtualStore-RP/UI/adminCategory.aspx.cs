@@ -16,6 +16,15 @@ namespace VirtualStore_RP.UI
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["UserEmail"] == null || Session["UserId"] == null || Session["UserType"] == null || Session["UserEmail"].ToString().Length == 0 || Session["UserId"].ToString().Length == 0 ||
+                Session["UserType"].ToString().Length == 0)
+            {
+                Response.Redirect("index.aspx");
+            }
+            if (Session["UserType"].ToString() != "admin")
+            {
+                Response.Redirect("index.aspx");
+            }
             if (!Page.IsPostBack)
             {
                 ShowGridViewCategory();

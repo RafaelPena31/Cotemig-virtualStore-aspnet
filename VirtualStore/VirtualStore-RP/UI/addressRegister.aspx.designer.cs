@@ -11,7 +11,7 @@ namespace VirtualStore_RP.UI
 {
 
 
-    public partial class searchProduct
+    public partial class addressRegister
     {
 
         /// <summary>
@@ -42,30 +42,75 @@ namespace VirtualStore_RP.UI
         protected global::System.Web.UI.WebControls.HyperLink IndexRedirect;
 
         /// <summary>
-        /// Controle txtProductSearch.
+        /// Controle txtRegisterStreet.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtProductSearch;
+        protected global::System.Web.UI.WebControls.TextBox txtRegisterStreet;
 
         /// <summary>
-        /// Controle btnSearch.
+        /// Controle txtRegisterNumber.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSearch;
+        protected global::System.Web.UI.WebControls.TextBox txtRegisterNumber;
 
         /// <summary>
-        /// Controle gridViewProduct.
+        /// Controle txtRegisterNeighborhood.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gridViewProduct;
+        protected global::System.Web.UI.WebControls.TextBox txtRegisterNeighborhood;
+
+        /// <summary>
+        /// Controle txtRegisterCity.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtRegisterCity;
+
+        /// <summary>
+        /// Controle txtRegisterCep.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtRegisterCep;
+
+        /// <summary>
+        /// Controle btnRegisterAddress.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRegisterAddress;
+
+        /// <summary>
+        /// Controle snackbarOK.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label snackbarOK;
+
+        /// <summary>
+        /// Controle snackbarError.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label snackbarError;
     }
 }

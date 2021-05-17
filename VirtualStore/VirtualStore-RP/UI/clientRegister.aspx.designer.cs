@@ -87,6 +87,15 @@ namespace VirtualStore_RP.UI
         protected global::System.Web.UI.WebControls.TextBox txtRegisterPhone;
 
         /// <summary>
+        /// Controle dropRegisterType.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dropRegisterType;
+
+        /// <summary>
         /// Controle txtRegisterEmail.
         /// </summary>
         /// <remarks>

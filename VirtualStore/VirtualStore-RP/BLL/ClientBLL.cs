@@ -13,7 +13,7 @@ namespace VirtualStore_RP.BLL
 
         public void Insert(ClientDTO client)
         {
-            string sql = string.Format($@"INSERT INTO client VALUES(NULL, '{client.Name}', '{client.Cpf}', '{client.Phone}', '{client.Email}', '{client.Password}');");
+            string sql = string.Format($@"INSERT INTO client VALUES(NULL, '{client.Name}', '{client.Type}', '{client.Cpf}', '{client.Phone}', '{client.Email}', '{client.Password}');");
             connection.ExecutionSQL(sql);
         }
 
@@ -25,7 +25,7 @@ namespace VirtualStore_RP.BLL
 
         public void Update(ClientDTO client)
         {
-            string sql = string.Format($@"UPDATE client SET name='{client.Name}', cpf='{client.Cpf}', phone='{client.Phone}', email='{client.Email}', password='{client.Password}' WHERE id = '{client.Id}';");
+            string sql = string.Format($@"UPDATE client SET name='{client.Name}', type='{client.Type}', cpf='{client.Cpf}', phone='{client.Phone}', email='{client.Email}', password='{client.Password}' WHERE id = '{client.Id}';");
             connection.ExecutionSQL(sql);
         }
 
@@ -72,6 +72,12 @@ namespace VirtualStore_RP.BLL
             }
         }
 
+        public DataTable GetClient()
+        {
+            string sql = string.Format($@"SELECT * FROM client;");
+            return connection.QueryExecution(sql);
+        }
+
         public DataTable ConsultID(int id)
         {
             string sql = string.Format($@"SELECT * FROM client WHERE id = '{id}';");
@@ -80,7 +86,7 @@ namespace VirtualStore_RP.BLL
 
         public DataTable SearchClient(string conditional)
         {
-            string sql = string.Format($@"SELECT c.name, c.cpf, c.phone, c.email, a.street, a.number, a.neighborhood, a.city, a.cep FROM client as c, address as a WHERE a.client_id = c.id and '{conditional}' ORDER BY c.id;");
+            string sql = string.Format($@"SELECT c.id, c.name, c.type, c.cpf, c.phone, c.email, c.password FROM client as c WHERE {conditional} ORDER BY c.id;");
             return connection.QueryExecution(sql);
         }
     }

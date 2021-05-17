@@ -42,24 +42,6 @@ namespace VirtualStore_RP.UI
         protected global::System.Web.UI.WebControls.HyperLink IndexRedirect;
 
         /// <summary>
-        /// Controle LoginRedirect.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink LoginRedirect;
-
-        /// <summary>
-        /// Controle ProductRedirect.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink ProductRedirect;
-
-        /// <summary>
         /// Controle txtCategorySearch.
         /// </summary>
         /// <remarks>

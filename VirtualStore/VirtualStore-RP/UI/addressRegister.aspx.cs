@@ -9,7 +9,7 @@ using VirtualStore_RP.DTO;
 
 namespace VirtualStore_RP.UI
 {
-    public partial class providerRegister : System.Web.UI.Page
+    public partial class addressRegister : System.Web.UI.Page
     {
         private void ErrorMessage(string error)
         {
@@ -30,36 +30,31 @@ namespace VirtualStore_RP.UI
             {
                 Response.Redirect("index.aspx");
             }
-            if (Session["UserType"].ToString() != "admin")
-            {
-                Response.Redirect("index.aspx");
-            }
         }
 
-        protected void btnRegisterClient_Click(object sender, EventArgs e)
+        protected void btnRegisterAddress_Click(object sender, EventArgs e)
         {
             try
             {
-                ProviderDTO providerDTO = new ProviderDTO();
-                ProviderBLL providerBLL = new ProviderBLL();
-                providerDTO.Name = txtRegisterName.Text;
-                providerDTO.Cnpj = txtRegisterCnpj.Text;
-                providerDTO.Email = txtRegisterEmail.Text;
-                providerDTO.Phone = txtRegisterPhone.Text;
-                providerDTO.RepresentativeName = txtRegisterRepresentativeName.Text;
-                providerDTO.RepresentativePhone = txtRegisterRepresentativePhone.Text;
-                string clientId = providerBLL.ReturnID(providerDTO.Email);
-                if (clientId == "NOT_FOUND")
+                AddressDTO addressDTO = new AddressDTO();
+                AddressBLL addressBLL = new AddressBLL();
+                addressDTO.Street = txtRegisterStreet.Text;
+                addressDTO.Number = txtRegisterNumber.Text;
+                addressDTO.Neighborhood = txtRegisterNeighborhood.Text;
+                addressDTO.City = txtRegisterCity.Text;
+                addressDTO.Cep = txtRegisterCep.Text;
+                addressDTO.ClientID = int.Parse(Session["UserId"].ToString());
+                string addressId = addressBLL.ReturnID(addressDTO.Cep);
+                if (addressId == "NOT_FOUND")
                 {
-                    providerBLL.Insert(providerDTO);
-                    clientId = providerBLL.ReturnID(providerDTO.Email);
-                    string msg = string.Format($@"Seja bem vindo ao nosso sistema '{providerDTO.Name}'");
+                    addressBLL.Insert(addressDTO);
+                    string msg = string.Format($@"Endereço cadastrado com sucess!");
                     SuccessMessage(msg);
-                    Response.Redirect("adminProvider.aspx");
+                    Response.Redirect("profile.aspx");
                 }
                 else
                 {
-                    string msg = string.Format($@"Não foi possível finalizar o cadastro. Já existe um usuário com o e-mail: '{providerDTO.Email}'");
+                    string msg = string.Format($@"Não foi possível finalizar o cadastro. Já existe um endereço com o cep: '{addressDTO.Cep}'");
                     ErrorMessage(msg);
                 }
             }

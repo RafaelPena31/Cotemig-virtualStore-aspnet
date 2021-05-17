@@ -16,14 +16,14 @@ namespace VirtualStore_RP.UI
         {
             snackbarError.Text = string.Format($@"Erro no sistema: '{error}'");
             snackbarError.Visible = true;
+            snackbarOK.Visible = false;
         }
-
         private void SuccessMessage(string message)
         {
-            snackbarError.Text = message;
-            snackbarError.Visible = true;
+            snackbarOK.Text = message;
+            snackbarOK.Visible = true;
+            snackbarError.Visible = false;
         }
-
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -37,6 +37,7 @@ namespace VirtualStore_RP.UI
                 ClientDTO clientDTO = new ClientDTO();
                 ClientBLL clientBLL = new ClientBLL();
                 clientDTO.Name = txtRegisterName.Text;
+                clientDTO.Type = dropRegisterType.SelectedValue;
                 clientDTO.Cpf = txtRegisterCpf.Text;
                 clientDTO.Phone = txtRegisterPhone.Text;
                 clientDTO.Email = txtRegisterEmail.Text;
@@ -46,8 +47,25 @@ namespace VirtualStore_RP.UI
                 {
                     clientBLL.Insert(clientDTO);
                     clientId = clientBLL.ReturnID(clientDTO.Email);
+                    string clientType = clientBLL.ConsultID(int.Parse(clientId)).Rows[0]["type"].ToString();
+                    Session["UserEmail"] = clientDTO.Email;
+                    Session["UserId"] = clientId;
+                    Session["UserType"] = clientType;
                     string msg = string.Format($@"Seja bem vindo ao nosso sistema '{clientDTO.Name}'");
                     SuccessMessage(msg);
+
+                    switch (clientType)
+                    {
+                        case "client":
+                            Response.Redirect("clientHome.aspx");
+                            break;
+                        case "admin":
+                            Response.Redirect("home.aspx");
+                            break;
+                        default:
+                            Response.Redirect("clientHome.aspx");
+                            break;
+                    }
                 }
                 else
                 {

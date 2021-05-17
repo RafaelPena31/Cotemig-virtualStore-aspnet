@@ -16,6 +16,11 @@ namespace VirtualStore_RP.UI
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["UserEmail"] == null || Session["UserId"] == null || Session["UserType"] == null || Session["UserEmail"].ToString().Length == 0 || Session["UserId"].ToString().Length == 0 ||
+                Session["UserType"].ToString().Length == 0)
+            {
+                Response.Redirect("index.aspx");
+            }
             ShowGridViewCategory();
         }
 
@@ -31,7 +36,7 @@ namespace VirtualStore_RP.UI
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            if(txtCategorySearch.Text != "")
+            if (txtCategorySearch.Text != "")
             {
                 ShowGridViewCategory();
             }

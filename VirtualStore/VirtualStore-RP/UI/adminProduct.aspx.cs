@@ -17,18 +17,28 @@ namespace VirtualStore_RP.UI
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["UserEmail"] == null || Session["UserId"] == null || Session["UserType"] == null || Session["UserEmail"].ToString().Length == 0 || Session["UserId"].ToString().Length == 0 ||
+                Session["UserType"].ToString().Length == 0)
+            {
+                Response.Redirect("index.aspx");
+            }
+            if (Session["UserType"].ToString() != "admin")
+            {
+                Response.Redirect("index.aspx");
+            }
             if (!Page.IsPostBack)
             {
                 ShowGridViewProduct();
             }
         }
 
-        public void ShowGridViewProduct() {
+        public void ShowGridViewProduct()
+        {
             string search = "pt.name like '%" + txtProductSearch.Text + "%'";
             gridViewProduct.DataSource = productBLL.SearchProducts(search);
             gridViewProduct.DataBind();
         }
-        
+
         protected void gridViewProduct_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             productDTO.Id = Convert.ToInt32(gridViewProduct.DataKeys[e.RowIndex].Value.ToString());
@@ -51,12 +61,16 @@ namespace VirtualStore_RP.UI
 
         protected void gridViewProduct_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
+            string defaultCategory = productBLL.ConsultId(Convert.ToInt32(gridViewProduct.DataKeys[e.RowIndex].Value.ToString())).Rows[0]["category_id"].ToString();
+            string defaultProvider = productBLL.ConsultId(Convert.ToInt32(gridViewProduct.DataKeys[e.RowIndex].Value.ToString())).Rows[0]["provider_id"].ToString();
             productDTO.Id = Convert.ToInt32(gridViewProduct.DataKeys[e.RowIndex].Value.ToString());
             productDTO.Name = e.NewValues[0].ToString();
             productDTO.Description = e.NewValues[1].ToString();
             productDTO.ProductValue = Convert.ToDouble(e.NewValues[2].ToString());
+            productDTO.CategoryID = int.Parse(defaultCategory);
+            productDTO.ProviderID = int.Parse(defaultProvider);
 
-            FileUpload productPhoto = (FileUpload)gridViewProduct.Rows[e.RowIndex].FindControl("fileUpdPhoto");
+            FileUpload productPhoto = (FileUpload)gridViewProduct.Rows[e.RowIndex].FindControl("fileUpPhoto");
 
             if (productPhoto.HasFile)
             {

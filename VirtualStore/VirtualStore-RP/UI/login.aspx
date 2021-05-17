@@ -6,7 +6,7 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <title></title>
+    <title>VirtualStore - Entre agora</title>
 </head>
 <body>
     <form id="form1" runat="server" class="vh-100 d-flex align-items-center flex-column">
@@ -57,7 +57,7 @@
 
         <nav class="position-fixed bottom-0">
             <div class="container-fluid">
-                <p class="navbar-brand">Copyright &copy; Desenvolvido por <b>Rafael Pena</b>. Todos os direitos reservados.</p>
+                <p class="navbar-brand">Copyright &copy; Desenvolvido por <b>Rafael Pena e Arthur Santiago</b>. Todos os direitos reservados.</p>
             </div>
         </nav>
     </form>
