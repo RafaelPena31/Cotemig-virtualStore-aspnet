@@ -12,7 +12,6 @@ namespace VirtualStore_RP
         private double productValue;
 
         public int Id { get => id; set => id = value; }
-        public string Photo { get => photo; set => photo = value; }
 
         public string Name
         {
@@ -103,6 +102,22 @@ namespace VirtualStore_RP
                 }
             }
             get { return this.productValue; }
+        }
+
+        public string Photo
+        {
+            set
+            {
+                if (value != string.Empty)
+                {
+                    this.photo = value;
+                }
+                else
+                {
+                    throw new Exception("Campo foto é obrigatório");
+                }
+            }
+            get { return this.photo; }
         }
 
     }

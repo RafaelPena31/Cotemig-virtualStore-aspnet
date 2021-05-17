@@ -1,10 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="searchProduct.aspx.cs" Inherits="VirtualStore_RP.UI.searchProduct" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="searchCategory.aspx.cs" Inherits="VirtualStore_RP.UI.searchCategory" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <title>Visualizar o produto</title>
 </head>
@@ -34,14 +34,14 @@
 
         <div class="d-flex justify-content-center mt-3 mb-3">
             <div class="w-50 d-flex">
-            <asp:TextBox ID="txtProductSearch" class="form-control" placeholder="Pesquisar por parte do nome" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txtCategorySearch" class="form-control" placeholder="Pesquisar por parte do nome" runat="server"></asp:TextBox>
               <asp:Button ID="btnSearch" runat="server" class="btn btn-primary" Text="Pesquisar" OnClick="btnSearch_Click"/>
          </div>
             </div>
 
         <div class="d-flex justify-content-center px-3">
-        <div class="w-100">
-            <asp:GridView ID="gridViewProduct" AutoGenerateColumns="false" DataKeyNames="id" runat="server" class="table table-hover">
+        <div class="w-75">
+            <asp:GridView ID="gridViewCategory" AutoGenerateColumns="false" DataKeyNames="id" runat="server" class="table table-hover">
                 <Columns>
 
                     <asp:TemplateField HeaderText="Código">
@@ -52,43 +52,13 @@
 
                     <asp:TemplateField HeaderText="Nome">
                         <ItemTemplate>
-                            <asp:Label ID="lblProductName" runat="server" Text='<%# Eval("name") %>'></asp:Label>
+                            <asp:Label ID="lblProductName" runat="server" Text='<%# Eval("nameCat") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
 
                     <asp:TemplateField HeaderText="Descrição">
                         <ItemTemplate>
                             <asp:Label ID="lblProductDescription" runat="server" Text='<%# Eval("description") %>'></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-
-                    <asp:TemplateField HeaderText="Valor">
-                        <ItemTemplate>
-                            <asp:Label ID="lblProductValue" runat="server" Text='<%# Eval("value") %>'></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-
-                    <asp:TemplateField HeaderText="Categoria">
-                        <ItemTemplate>
-                            <asp:Label ID="lblProductCategory" runat="server" Text='<%# Eval("nameCat") %>' ></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-
-                    <asp:TemplateField HeaderText="Fornecedor">
-                        <ItemTemplate>
-                            <asp:Label ID="lblProductProvider" runat="server" Text='<%# Eval("namePro") %>' ></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-
-                    <asp:TemplateField HeaderText="Foto">
-                        <ItemTemplate>
-                            <asp:Image ID="lblProductPhoto" ImageUrl='<%# "~/IMG/Products/" + Eval("photo") %>' Width="80" Height="100" runat="server" ></asp:Image>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-
-                    <asp:TemplateField HeaderText="Quantidade">
-                        <ItemTemplate>
-                            <asp:Label ID="lblProductQuantity" runat="server" Text='<%# Eval("stockQuantity") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
 

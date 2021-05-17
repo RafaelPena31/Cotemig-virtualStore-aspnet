@@ -26,7 +26,7 @@
                         </li>
                         <li class="nav-item">
                             <asp:HyperLink ID="ProductRedirect" CssClass="nav-link" NavigateUrl="~/UI/searchProduct.aspx" Text="Produtos" runat="server"></asp:HyperLink>
-                        </li>
+                        </li> 
                     </ul>
                 </div>
             </div>
@@ -38,7 +38,7 @@
 
         <nav class="position-fixed bottom-0">
             <div class="container-fluid">
-                <p class="navbar-brand">Copyright &copy; Desenvolvido por <b>Rafael Pena</b>. Todos os direitos reservados.</p>
+                <p class="navbar-brand">Copyright &copy; Desenvolvido por <b>Rafael Pena</b> e <b>Arthur Santiago</b>. Todos os direitos reservados.</p>
             </div>
         </nav>
     </form>

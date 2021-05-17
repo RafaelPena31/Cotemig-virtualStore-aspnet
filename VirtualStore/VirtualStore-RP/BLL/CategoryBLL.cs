@@ -17,15 +17,15 @@ namespace VirtualStore_RP.BLL
             connection.ExecutionSQL(sql);
         }
 
-        public void Delete(int id)
+        public void Delete(CategoryDTO category)
         {
-            string sql = string.Format($@"DELETE FROM category WHERE id = '{id}';");
+            string sql = string.Format($@"DELETE FROM category WHERE id = '{category.Id}';");
             connection.ExecutionSQL(sql);
         }
 
         public void Update(CategoryDTO category)
         {
-            string sql = string.Format($@"UPDATE category SET name='{category.Name}', description='{category.Description}' WHERE id = '{category.Id}';");
+            string sql = string.Format($@"UPDATE category SET nameCat='{category.Name}', description='{category.Description}' WHERE id = {category.Id};");
             connection.ExecutionSQL(sql);
         }
 
@@ -35,9 +35,15 @@ namespace VirtualStore_RP.BLL
             return connection.QueryExecution(sql);
         }
 
-        public DataTable SearchClient(string conditional)
+        public DataTable Consult()
         {
-            string sql = string.Format($@"SELECT c.name, c.description FROM category as c, address as a WHERE a.category_id = c.id and '{conditional}' ORDER BY c.id;");
+            string sql = string.Format($@"SELECT * FROM category");
+            return connection.QueryExecution(sql);
+        }
+
+        public DataTable SearchCategory(string conditional)
+        {
+            string sql = string.Format($@"SELECT c.id ,c.nameCat, c.description FROM category as c WHERE {conditional} ORDER BY c.id;");
             return connection.QueryExecution(sql);
         }
     }

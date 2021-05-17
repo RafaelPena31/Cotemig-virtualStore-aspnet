@@ -11,7 +11,7 @@ namespace VirtualStore_RP.UI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+             
         }
     }
 }

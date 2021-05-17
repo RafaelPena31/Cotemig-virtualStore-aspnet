@@ -10,7 +10,7 @@ namespace VirtualStore_RP
     public class MySqlDAL
     {
         private static string server = "localhost";
-        private static string database = "VirtualStore";
+        private static string database = "virtualstore";
         private static string user = "root";
         private static string password = "";
 

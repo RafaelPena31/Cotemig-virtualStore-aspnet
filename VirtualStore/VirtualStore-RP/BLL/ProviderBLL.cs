@@ -35,6 +35,12 @@ namespace VirtualStore_RP.BLL
             return connection.QueryExecution(sql);
         }
 
+        public DataTable Consult()
+        {
+            string sql = string.Format($@"SELECT * FROM provider");
+            return connection.QueryExecution(sql);
+        }
+
         public DataTable SearchClient(string conditional)
         {
             string sql = string.Format($@"SELECT p.name, p.cnpj, p.email, p.phone, p.representativeName, p.representativePhone, FROM provider as p WHERE a.provider_id = p.id and '{conditional}' ORDER BY p.id;");

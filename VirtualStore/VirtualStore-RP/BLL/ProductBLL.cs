@@ -16,9 +16,9 @@ namespace VirtualStore_RP.BLL
             connection.ExecutionSQL(sql);
         }
 
-        public void Delete(int Id)
+        public void Delete(ProductDTO product)
         {
-            string sql = string.Format($@"DELETE FROM product WHERE id = '{Id}';");
+            string sql = string.Format($@"DELETE FROM product WHERE id = '{product.Id}';");
             connection.ExecutionSQL(sql);
         }
 
@@ -33,10 +33,10 @@ namespace VirtualStore_RP.BLL
             string sql = string.Format($@"SELECT * FROM product WHERE id = '{Id}';");
             return connection.QueryExecution(sql);
         }
-
+        
         public DataTable SearchProducts(string conditional)
         {
-            string sql = string.Format($@"SELECT pt.id, pt.name, pt.description, pt.value, pr.name, c.name, pt.photo, pt.stockQuantity FROM product as pt, category as c, provider as pr WHERE pt.category_id = c.id and pt.provider_id = pr.id and '{conditional}' ORDER BY pt.id;");
+            string sql = string.Format($@"SELECT pt.id, pt.name, pt.description, pt.value, pr.namePro, c.nameCat, pt.photo, pt.stockQuantity FROM product as pt, category as c, provider as pr WHERE pt.category_id = c.id and pt.provider_id = pr.id and {conditional} ORDER BY pt.id;");
             return connection.QueryExecution(sql);
         }
     }
