@@ -57,7 +57,7 @@
 
         <nav class="position-fixed bottom-0">
             <div class="container-fluid">
-                <p class="navbar-brand">Copyright &copy; Desenvolvido por <b>Rafael Pena</b>. Todos os direitos reservados.</p>
+                <p class="navbar-brand">Copyright &copy; Desenvolvido por <b>Rafael Pena e Arthur Santiago</b>. Todos os direitos reservados.</p>
             </div>
         </nav>
     </form>

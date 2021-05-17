@@ -11,7 +11,7 @@ namespace VirtualStore_RP.UI
 {
 
 
-    public partial class clientRegister
+    public partial class profile
     {
 
         /// <summary>
@@ -42,85 +42,31 @@ namespace VirtualStore_RP.UI
         protected global::System.Web.UI.WebControls.HyperLink IndexRedirect;
 
         /// <summary>
-        /// Controle LoginRedirect.
+        /// Controle ClientGrid.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink LoginRedirect;
+        protected global::System.Web.UI.WebControls.GridView ClientGrid;
 
         /// <summary>
-        /// Controle ProductRedirect.
+        /// Controle AddressGrid.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink ProductRedirect;
+        protected global::System.Web.UI.WebControls.GridView AddressGrid;
 
         /// <summary>
-        /// Controle txtRegisterName.
+        /// Controle BtnRegisterAddress.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRegisterName;
-
-        /// <summary>
-        /// Controle txtRegisterCpf.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRegisterCpf;
-
-        /// <summary>
-        /// Controle txtRegisterPhone.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRegisterPhone;
-
-        /// <summary>
-        /// Controle dropRegisterType.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dropRegisterType;
-
-        /// <summary>
-        /// Controle txtRegisterEmail.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRegisterEmail;
-
-        /// <summary>
-        /// Controle txtRegisterPass.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRegisterPass;
-
-        /// <summary>
-        /// Controle btnRegisterClient.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRegisterClient;
+        protected global::System.Web.UI.WebControls.Button BtnRegisterAddress;
 
         /// <summary>
         /// Controle snackbarOK.

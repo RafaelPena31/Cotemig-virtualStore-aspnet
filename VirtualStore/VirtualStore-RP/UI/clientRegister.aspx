@@ -49,6 +49,13 @@
                 <asp:Label for="txtRegisterPhone" class="form-label" runat="server" Text="Telefone:"></asp:Label>
                 <asp:TextBox type="phone" class="form-control" ID="txtRegisterPhone" runat="server"></asp:TextBox>
             </div>
+            <div class="mb-3">
+                <asp:Label for="dropRegisterType" class="form-label" runat="server" Text="Tipo de usuário:"></asp:Label>
+                <asp:DropDownList type="phone" class="form-select" ID="dropRegisterType" runat="server">
+                    <asp:ListItem Text="cliente" Value="client" />
+                    <asp:ListItem Text="administrador" Value="admin" />
+                </asp:DropDownList>
+            </div>
 
             <div class="mb-3">
                 <h1>Informações de registro</h1>
@@ -75,7 +82,7 @@
 
         <nav>
             <div class="container-fluid">
-                <p class="navbar-brand">Copyright &copy; Desenvolvido por <b>Rafael Pena</b>. Todos os direitos reservados.</p>
+                <p class="navbar-brand">Copyright &copy; Desenvolvido por <b>Rafael Pena e Arthur Santiago</b>. Todos os direitos reservados.</p>
             </div>
         </nav>
     </form>

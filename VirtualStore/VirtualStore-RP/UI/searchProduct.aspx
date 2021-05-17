@@ -19,13 +19,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <asp:HyperLink ID="IndexRedirect" CssClass="nav-link" NavigateUrl="~/UI/index.aspx" Text="Tela Inicial" runat="server"></asp:HyperLink>
-                        </li>
-                        <li class="nav-item">
-                            <asp:HyperLink ID="LoginRedirect" CssClass="nav-link" NavigateUrl="~/UI/login.aspx" Text="Login de acesso" runat="server"></asp:HyperLink>
-                        </li>
-                        <li class="nav-item">
-                            <asp:HyperLink ID="ProductRedirect" CssClass="nav-link active" NavigateUrl="~/UI/searchProduct.aspx" Text="Produtos" runat="server"></asp:HyperLink>
+                            <asp:HyperLink ID="IndexRedirect" CssClass="nav-link" NavigateUrl="~/UI/clientHome.aspx" Text="Voltar para a tela principal" runat="server"></asp:HyperLink>
                         </li>
                     </ul>
                 </div>
@@ -34,7 +28,7 @@
 
         <nav class="position-fixed bottom-0">
             <div class="container-fluid">
-                <p class="navbar-brand">Copyright &copy; Desenvolvido por <b>Rafael Pena</b>. Todos os direitos reservados.</p>
+                <p class="navbar-brand">Copyright &copy; Desenvolvido por <b>Rafael Pena e Arthur Santiago</b>. Todos os direitos reservados.</p>
             </div>
         </nav>
     </form>

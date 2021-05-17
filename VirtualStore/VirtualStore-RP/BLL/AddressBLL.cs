@@ -13,7 +13,7 @@ namespace VirtualStore_RP.BLL
 
         public void Insert(AddressDTO address)
         {
-            string sql = string.Format($@"INSERT INTO address VALUES(NULL, '{address.Street}', '{address.Number}', '{address.Neighborhood}', '{address.City}', '{address.Cep}');");
+            string sql = string.Format($@"INSERT INTO address VALUES(NULL, '{address.Street}', '{address.Number}', '{address.Neighborhood}', '{address.City}', '{address.Cep}', '{address.ClientID}');");
             connection.ExecutionSQL(sql);
         }
 
@@ -28,11 +28,31 @@ namespace VirtualStore_RP.BLL
             string sql = string.Format($@"UPDATE address SET street='{address.Street}', number='{address.Number}', neighborhood='{address.Neighborhood}', city='{address.City}', cep='{address.Cep}' WHERE id = '{address.Id}';");
             connection.ExecutionSQL(sql);
         }
+        public string ReturnID(string cep)
+        {
+            string sql = string.Format($@"SELECT id FROM address WHERE cep = '{cep}';");
+            DataTable dt = connection.QueryExecution(sql);
+            if (dt.Rows.Count == 1)
+            {
+                Console.WriteLine(dt.Rows[0]["id"].ToString());
+                return dt.Rows[0]["id"].ToString();
+            }
+            else
+            {
+                return "NOT_FOUND";
+            }
+        }
 
         public DataTable ConsultID(int id)
         {
             string sql = string.Format($@"SELECT * FROM address WHERE id = '{id}';");
             return connection.QueryExecution(sql);
         }
+
+        public DataTable GetUserAddress(int userId)
+        {
+            string sql = string.Format($@"SELECT a.id, a.street, a.number, a.neighborhood, a.city, a.cep FROM address as a WHERE a.client_id = {userId} ORDER BY a.id;");
+            return connection.QueryExecution(sql);
+            }
     }
 }

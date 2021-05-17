@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace VirtualStore_RP.UI
 {
-    public partial class home : System.Web.UI.Page
+    public partial class clientHome : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -16,9 +16,9 @@ namespace VirtualStore_RP.UI
             {
                 Response.Redirect("index.aspx");
             }
-            if (Session["UserType"].ToString() != "admin")
+            if (Session["UserType"].ToString() != "client")
             {
-                Response.Redirect("clientHome.aspx");
+                Response.Redirect("home.aspx");
             }
         }
     }

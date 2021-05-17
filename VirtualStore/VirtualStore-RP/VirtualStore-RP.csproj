@@ -69,15 +69,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="UI\addressRegister.aspx" />
     <Content Include="UI\adminCategory.aspx" />
     <Content Include="UI\adminClient.aspx" />
     <Content Include="UI\adminProduct.aspx" />
     <Content Include="UI\adminProvider.aspx" />
     <Content Include="UI\categoryRegister.aspx" />
+    <Content Include="UI\clientHome.aspx" />
     <Content Include="UI\clientRegister.aspx" />
+    <Content Include="UI\home.aspx" />
     <Content Include="UI\index.aspx" />
     <Content Include="UI\login.aspx" />
     <Content Include="UI\productRegister.aspx" />
+    <Content Include="UI\profile.aspx" />
     <Content Include="UI\providerRegister.aspx" />
     <Content Include="UI\searchProduct.aspx" />
     <Content Include="UI\searchProvider.aspx" />
@@ -96,6 +100,13 @@
     <Compile Include="DTO\ProductDTO.cs" />
     <Compile Include="DTO\ProviderDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\addressRegister.aspx.cs">
+      <DependentUpon>addressRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\addressRegister.aspx.designer.cs">
+      <DependentUpon>addressRegister.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UI\adminCategory.aspx.cs">
       <DependentUpon>adminCategory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -131,12 +142,26 @@
     <Compile Include="UI\categoryRegister.aspx.designer.cs">
       <DependentUpon>categoryRegister.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UI\clientHome.aspx.cs">
+      <DependentUpon>clientHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\clientHome.aspx.designer.cs">
+      <DependentUpon>clientHome.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UI\clientRegister.aspx.cs">
       <DependentUpon>clientRegister.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UI\clientRegister.aspx.designer.cs">
       <DependentUpon>clientRegister.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\home.aspx.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\home.aspx.designer.cs">
+      <DependentUpon>home.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
@@ -158,6 +183,13 @@
     </Compile>
     <Compile Include="UI\productRegister.aspx.designer.cs">
       <DependentUpon>productRegister.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\profile.aspx.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\profile.aspx.designer.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\providerRegister.aspx.cs">
       <DependentUpon>providerRegister.aspx</DependentUpon>

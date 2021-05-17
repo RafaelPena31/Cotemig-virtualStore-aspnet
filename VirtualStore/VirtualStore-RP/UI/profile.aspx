@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="adminClient.aspx.cs" Inherits="VirtualStore_RP.UI.adminClient" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="profile.aspx.cs" Inherits="VirtualStore_RP.UI.profile" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
 </head>
 <body>
@@ -19,55 +19,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <asp:HyperLink ID="IndexRedirect" CssClass="nav-link" NavigateUrl="~/UI/home.aspx" Text="Início" runat="server"></asp:HyperLink>
-                        </li>
-                        <li class="nav-item">
-                            <asp:HyperLink ID="HyperLink2" CssClass="nav-link" NavigateUrl="~/UI/profile.aspx" Text="Perfil" runat="server"></asp:HyperLink>
-                        </li>
-                        <li class="nav-item">
-                            <asp:HyperLink ID="HyperLink13" CssClass="nav-link active" NavigateUrl="~/UI/adminClient.aspx" Text="Clientes" runat="server"></asp:HyperLink>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <asp:HyperLink ID="d" CssClass="nav-link dropdown-toggle" NavigateUrl="#" data-bs-toggle="dropdown" aria-expanded="false" Text="Categoria" runat="server"></asp:HyperLink>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li>
-                                    <asp:HyperLink ID="HyperLink5" CssClass="dropdown-item" NavigateUrl="~/UI/categoryRegister.aspx" Text="Cadastro de categoria" runat="server"></asp:HyperLink>
-                                </li>
-                                <li>
-                                    <asp:HyperLink ID="HyperLink6" CssClass="dropdown-item" NavigateUrl="~/UI/adminCategory.aspx" Text="Gerenciador de categoria" runat="server"></asp:HyperLink>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <asp:HyperLink ID="HyperLink7" CssClass="nav-link dropdown-toggle" NavigateUrl="#" data-bs-toggle="dropdown" aria-expanded="false" Text="Fornecedores" runat="server"></asp:HyperLink>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li>
-                                    <asp:HyperLink ID="HyperLink8" CssClass="dropdown-item" NavigateUrl="~/UI/searchProvider.aspx" Text="Pesquisa de fornecedores" runat="server"></asp:HyperLink>
-                                </li>
-                                <li>
-                                    <asp:HyperLink ID="HyperLink9" CssClass="dropdown-item" NavigateUrl="~/UI/providerRegister.aspx" Text="Cadastro de fornecedores" runat="server"></asp:HyperLink>
-                                </li>
-                                <li>
-                                    <asp:HyperLink ID="HyperLink10" CssClass="dropdown-item" NavigateUrl="~/UI/adminProvider.aspx" Text="Gerenciador de fornecedores" runat="server"></asp:HyperLink>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <asp:HyperLink ID="HyperLink1" CssClass="nav-link dropdown-toggle" NavigateUrl="#" data-bs-toggle="dropdown" aria-expanded="false" Text="Produtos" runat="server"></asp:HyperLink>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li>
-                                    <asp:HyperLink ID="HyperLink3" CssClass="dropdown-item" NavigateUrl="~/UI/searchProduct.aspx" Text="Pesquisa de produtos" runat="server"></asp:HyperLink>
-                                </li>
-                                <li>
-                                    <asp:HyperLink ID="HyperLink11" CssClass="dropdown-item" NavigateUrl="~/UI/productRegister.aspx" Text="Cadastro de produtos" runat="server"></asp:HyperLink>
-                                </li>
-                                <li>
-                                    <asp:HyperLink ID="HyperLink12" CssClass="dropdown-item" NavigateUrl="~/UI/adminProduct.aspx" Text="Gerenciador de produtos" runat="server"></asp:HyperLink>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <asp:HyperLink ID="HyperLink4" CssClass="nav-link" NavigateUrl="~/UI/index.aspx" Text="Sair" runat="server"></asp:HyperLink>
+                            <asp:HyperLink ID="IndexRedirect" CssClass="nav-link" NavigateUrl="~/UI/clientHome.aspx" Text="Voltar para a tela principal" runat="server"></asp:HyperLink>
                         </li>
                     </ul>
                 </div>
@@ -75,13 +27,8 @@
         </nav>
 
         <section class="text-center">
-            <h1>GERENCIAMENTO DE CLIENTES</h1>
+            <h1>PERFIL</h1>
         </section>
-
-        <div class="d-flex align-items-center flex-column w-50">
-            <asp:TextBox ID="TxtSearchBox" placeholder="Pesquisar por parte do nome" runat="server" OnTextChanged="TxtSearchBox_TextChanged" CssClass="w-100 mb-4"></asp:TextBox>
-            <asp:Button ID="BtnSearchProduct" Class="btn btn-primary w-100 mb-3 " runat="server" Text="Pesquisar" OnClick="BtnSearchProduct_Click" />
-        </div>
 
         <div>
             <asp:GridView
@@ -89,7 +36,6 @@
                 OnRowEditing="ClientGrid_RowEditing"
                 OnRowCancelingEdit="ClientGrid_RowCancelingEdit"
                 OnRowUpdating="ClientGrid_RowUpdating"
-                OnRowDeleting="ClientGrid_RowDeleting"
                 AutoGenerateColumns="false"
                 EnableViewState="False"
                 DataKeyNames="id"
@@ -118,12 +64,6 @@
                             <asp:Label ID="labelType" runat="server" Text='<%# Eval("type")%>'>
                             </asp:Label>
                         </ItemTemplate>
-                        <EditItemTemplate>
-                            <asp:DropDownList ID="textType" Text='<%# Bind("type")%>' CssClass="form-select" runat="server">
-                                <asp:ListItem Text="cliente" Value="client" />
-                                <asp:ListItem Text="administrador" Value="admin" />
-                            </asp:DropDownList>
-                        </EditItemTemplate>
                     </asp:TemplateField>
 
                     <asp:TemplateField HeaderText="CPF">
@@ -171,9 +111,96 @@
                     </asp:TemplateField>
 
                     <asp:CommandField ShowEditButton="true" ButtonType="Link" HeaderText="Editar" runat="server"></asp:CommandField>
+                </Columns>
+            </asp:GridView>
+        </div>
+
+        <section class="text-center">
+            <h1>ENDEREÇO</h1>
+        </section>
+
+        <div class="mb-3">
+            <asp:GridView
+                ID="AddressGrid"
+                OnRowEditing="AddressGrid_RowEditing"
+                OnRowCancelingEdit="AddressGrid_RowCancelingEdit"
+                OnRowUpdating="AddressGrid_RowUpdating"
+                OnRowDeleting="AddressGrid_RowDeleting"
+                AutoGenerateColumns="false"
+                EnableViewState="False"
+                DataKeyNames="id"
+                runat="server">
+                <Columns>
+                    <asp:TemplateField HeaderText="Id">
+                        <ItemTemplate>
+                            <asp:Label ID="labelId" runat="server" Text='<%# Eval("id")%>'>
+                            </asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+
+                    <asp:TemplateField HeaderText="Rua">
+                        <ItemTemplate>
+                            <asp:Label ID="labelStreet" runat="server" Text='<%# Eval("street")%>'>
+                            </asp:Label>
+                        </ItemTemplate>
+                        <EditItemTemplate>
+                            <asp:TextBox ID="textStreet" Text='<%# Bind("street")%>' runat="server">
+                            </asp:TextBox>
+                        </EditItemTemplate>
+                    </asp:TemplateField>
+
+                    <asp:TemplateField HeaderText="Número">
+                        <ItemTemplate>
+                            <asp:Label ID="labelNumber" runat="server" Text='<%# Eval("number")%>'>
+                            </asp:Label>
+                        </ItemTemplate>
+                        <EditItemTemplate>
+                            <asp:TextBox ID="textNumber" Text='<%# Bind("number")%>' runat="server">
+                            </asp:TextBox>
+                        </EditItemTemplate>
+                    </asp:TemplateField>
+
+                    <asp:TemplateField HeaderText="Bairro">
+                        <ItemTemplate>
+                            <asp:Label ID="labelNeighborhood" runat="server" Text='<%# Eval("neighborhood")%>'>
+                            </asp:Label>
+                        </ItemTemplate>
+                        <EditItemTemplate>
+                            <asp:TextBox ID="textNeighborhood" Text='<%# Bind("neighborhood")%>' runat="server">
+                            </asp:TextBox>
+                        </EditItemTemplate>
+                    </asp:TemplateField>
+
+                    <asp:TemplateField HeaderText="Cidade">
+                        <ItemTemplate>
+                            <asp:Label ID="labelCity" runat="server" Text='<%# Eval("city")%>'>
+                            </asp:Label>
+                        </ItemTemplate>
+                        <EditItemTemplate>
+                            <asp:TextBox ID="textCity" Text='<%# Bind("city")%>' runat="server">
+                            </asp:TextBox>
+                        </EditItemTemplate>
+                    </asp:TemplateField>
+
+                    <asp:TemplateField HeaderText="CEP">
+                        <ItemTemplate>
+                            <asp:Label ID="labelCep" runat="server" Text='<%# Eval("cep")%>'>
+                            </asp:Label>
+                        </ItemTemplate>
+                        <EditItemTemplate>
+                            <asp:TextBox ID="textCep" Text='<%# Bind("cep")%>' runat="server">
+                            </asp:TextBox>
+                        </EditItemTemplate>
+                    </asp:TemplateField>
+
+                    <asp:CommandField ShowEditButton="true" ButtonType="Link" HeaderText="Editar" runat="server"></asp:CommandField>
                     <asp:CommandField ShowDeleteButton="true" ButtonType="Link" HeaderText="Excluir" runat="server"></asp:CommandField>
                 </Columns>
             </asp:GridView>
+        </div>
+
+        <div class="d-flex align-items-center flex-column w-25">
+            <asp:Button ID="BtnRegisterAddress" Class="btn btn-primary w-100 mb-3 " runat="server" Text="Novo Endereço" OnClick="BtnRegisterAddress_Click" />
         </div>
 
         <div class="form-group w-100 d-flex align-items-center flex-column text-center">

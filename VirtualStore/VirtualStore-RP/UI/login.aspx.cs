@@ -13,19 +13,18 @@ namespace VirtualStore_RP.UI
     {
         ClientDTO clientDTO = new ClientDTO();
         ClientBLL clientBLL = new ClientBLL();
-
         private void ErrorMessage(string error)
         {
             snackbarError.Text = string.Format($@"Erro no sistema: '{error}'");
             snackbarError.Visible = true;
+            snackbarOK.Visible = false;
         }
-
         private void SuccessMessage(string message)
         {
-            snackbarError.Text = message;
-            snackbarError.Visible = true;
+            snackbarOK.Text = message;
+            snackbarOK.Visible = true;
+            snackbarError.Visible = false;
         }
-
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -63,9 +62,26 @@ namespace VirtualStore_RP.UI
                 clientDTO.Password = txtLoginPass.Text;
                 if (clientBLL.Authenticator(clientDTO.Email, clientDTO.Password))
                 {
+                    string clientId = clientBLL.ReturnID(clientDTO.Email);
+                    string clientType = clientBLL.ConsultID(int.Parse(clientId)).Rows[0]["type"].ToString();
+
                     Session["UserEmail"] = clientDTO.Email;
+                    Session["UserId"] = clientId;
+                    Session["UserType"] = clientType;
                     SuccessMessage("Seja bem-vindo");
-                    Response.Redirect("profile.aspx");
+
+                    switch (clientType)
+                    {
+                        case "client":
+                            Response.Redirect("clientHome.aspx");
+                            break;
+                        case "admin":
+                            Response.Redirect("home.aspx");
+                            break;
+                        default:
+                            Response.Redirect("clientHome.aspx");
+                            break;
+                    }
                 }
                 else
                 {
