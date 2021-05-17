@@ -6,7 +6,7 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <title></title>
+    <title>VirtualStore - Gerenciamento de usuário</title>
 </head>
 <body>
     <form id="form1" runat="server" class="d-flex align-items-center flex-column">
@@ -86,6 +86,7 @@
         <div>
             <asp:GridView
                 ID="ClientGrid"
+                class="table table-hover"
                 OnRowEditing="ClientGrid_RowEditing"
                 OnRowCancelingEdit="ClientGrid_RowCancelingEdit"
                 OnRowUpdating="ClientGrid_RowUpdating"
@@ -108,7 +109,7 @@
                             </asp:Label>
                         </ItemTemplate>
                         <EditItemTemplate>
-                            <asp:TextBox ID="textName" Text='<%# Bind("name")%>' runat="server">
+                            <asp:TextBox ID="textName" class="form-control" Text='<%# Bind("name")%>' runat="server">
                             </asp:TextBox>
                         </EditItemTemplate>
                     </asp:TemplateField>
@@ -132,7 +133,7 @@
                             </asp:Label>
                         </ItemTemplate>
                         <EditItemTemplate>
-                            <asp:TextBox ID="textCPF" Text='<%# Bind("cpf")%>' runat="server">
+                            <asp:TextBox ID="textCPF" Text='<%# Bind("cpf")%>' class="form-control" runat="server">
                             </asp:TextBox>
                         </EditItemTemplate>
                     </asp:TemplateField>
@@ -143,7 +144,7 @@
                             </asp:Label>
                         </ItemTemplate>
                         <EditItemTemplate>
-                            <asp:TextBox ID="textTelefone" Text='<%# Bind("phone")%>' runat="server">
+                            <asp:TextBox ID="textTelefone" Text='<%# Bind("phone")%>' class="form-control" runat="server">
                             </asp:TextBox>
                         </EditItemTemplate>
                     </asp:TemplateField>
@@ -154,7 +155,7 @@
                             </asp:Label>
                         </ItemTemplate>
                         <EditItemTemplate>
-                            <asp:TextBox ID="textEmail" Text='<%# Bind("email")%>' runat="server">
+                            <asp:TextBox ID="textEmail" Text='<%# Bind("email")%>' class="form-control" runat="server">
                             </asp:TextBox>
                         </EditItemTemplate>
                     </asp:TemplateField>
@@ -165,7 +166,7 @@
                             </asp:Label>
                         </ItemTemplate>
                         <EditItemTemplate>
-                            <asp:TextBox ID="textPass" Text='<%# Bind("password")%>' runat="server">
+                            <asp:TextBox ID="textPass" Text='<%# Bind("password")%>' class="form-control" runat="server">
                             </asp:TextBox>
                         </EditItemTemplate>
                     </asp:TemplateField>

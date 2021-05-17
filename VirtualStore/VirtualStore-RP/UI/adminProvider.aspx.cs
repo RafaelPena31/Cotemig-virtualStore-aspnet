@@ -32,7 +32,7 @@ namespace VirtualStore_RP.UI
         }
         public void GridViewLoadDataBySearch()
         {
-            string search = string.Format($@"p.name like '%{TxtSearchBox.Text}%'");
+            string search = string.Format($@"p.namePro like '%{TxtSearchBox.Text}%'");
             ProviderGrid.DataSource = providerBLL.SearchProvider(search);
             ProviderGrid.DataBind();
             TxtSearchBox.Text = "";

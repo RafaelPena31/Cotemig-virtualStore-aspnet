@@ -9,17 +9,11 @@ using VirtualStore_RP.DTO;
 
 namespace VirtualStore_RP.UI
 {
-    public partial class searchProvider : System.Web.UI.Page
+    public partial class searchCategory : System.Web.UI.Page
     {
-        ProviderDTO providerDTO = new ProviderDTO();
-        ProviderBLL providerBLL = new ProviderBLL();
-        public void GridViewLoadDataBySearch()
-        {
-            string search = string.Format($@"p.namePro like '%{TxtSearchBox.Text}%'");
-            ProviderGrid.DataSource = providerBLL.SearchProvider(search);
-            ProviderGrid.DataBind();
-            TxtSearchBox.Text = "";
-        }
+        CategoryBLL categoryBLL = new CategoryBLL();
+        CategoryDTO categoryDTO = new CategoryDTO();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["UserEmail"] == null || Session["UserId"] == null || Session["UserType"] == null || Session["UserEmail"].ToString().Length == 0 || Session["UserId"].ToString().Length == 0 ||
@@ -27,19 +21,25 @@ namespace VirtualStore_RP.UI
             {
                 Response.Redirect("index.aspx");
             }
+            ShowGridViewCategory();
+        }
+
+        public void ShowGridViewCategory()
+        {
+            string search = "c.nameCat like '%" + txtCategorySearch.Text + "%'";
+            gridViewCategory.DataSource = categoryBLL.SearchCategory(search);
             if (!Page.IsPostBack)
             {
-                ProviderGrid.DataBind();
+                gridViewCategory.DataBind();
             }
         }
-        protected void TxtSearchBox_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        protected void BtnSearchProvider_Click(object sender, EventArgs e)
+        protected void btnSearch_Click(object sender, EventArgs e)
         {
-            GridViewLoadDataBySearch();
+            if (txtCategorySearch.Text != "")
+            {
+                ShowGridViewCategory();
+            }
         }
     }
 }

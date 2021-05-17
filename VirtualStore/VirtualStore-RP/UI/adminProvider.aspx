@@ -6,7 +6,7 @@
 <head runat="server">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
+    <title>VirtualStore - Gerenciamento de fornecedores</title>
 </head>
 <body>
     <form id="form1" runat="server" class="d-flex align-items-center flex-column">
@@ -87,6 +87,7 @@
         <div>
             <asp:GridView
                 ID="ProviderGrid"
+                class="table table-hover"
                 OnRowEditing="ProviderGrid_RowEditing"
                 OnRowCancelingEdit="ProviderGrid_RowCancelingEdit"
                 OnRowUpdating="ProviderGrid_RowUpdating"
@@ -105,11 +106,11 @@
 
                     <asp:TemplateField HeaderText="Nome">
                         <ItemTemplate>
-                            <asp:Label ID="labelName" runat="server" Text='<%# Eval("name")%>'>
+                            <asp:Label ID="labelName" runat="server" Text='<%# Eval("namePro")%>'>
                             </asp:Label>
                         </ItemTemplate>
                         <EditItemTemplate>
-                            <asp:TextBox ID="textName" Text='<%# Bind("name")%>' runat="server">
+                            <asp:TextBox ID="textName" Text='<%# Bind("namePro")%>' class="form-control" runat="server">
                             </asp:TextBox>
                         </EditItemTemplate>
                     </asp:TemplateField>
@@ -120,7 +121,7 @@
                             </asp:Label>
                         </ItemTemplate>
                         <EditItemTemplate>
-                            <asp:TextBox ID="textCNPJ" Text='<%# Bind("cnpj")%>' runat="server">
+                            <asp:TextBox ID="textCNPJ" Text='<%# Bind("cnpj")%>' class="form-control" runat="server">
                             </asp:TextBox>
                         </EditItemTemplate>
                     </asp:TemplateField>
@@ -131,7 +132,7 @@
                             </asp:Label>
                         </ItemTemplate>
                         <EditItemTemplate>
-                            <asp:TextBox ID="textEmail" Text='<%# Bind("email")%>' runat="server">
+                            <asp:TextBox ID="textEmail" Text='<%# Bind("email")%>' class="form-control" runat="server">
                             </asp:TextBox>
                         </EditItemTemplate>
                     </asp:TemplateField>
@@ -142,7 +143,7 @@
                             </asp:Label>
                         </ItemTemplate>
                         <EditItemTemplate>
-                            <asp:TextBox ID="textTelefone" Text='<%# Bind("phone")%>' runat="server">
+                            <asp:TextBox ID="textTelefone" Text='<%# Bind("phone")%>' class="form-control" runat="server">
                             </asp:TextBox>
                         </EditItemTemplate>
                     </asp:TemplateField>
@@ -153,7 +154,7 @@
                             </asp:Label>
                         </ItemTemplate>
                         <EditItemTemplate>
-                            <asp:TextBox ID="textRepresentativeName" Text='<%# Bind("representativeName")%>' runat="server">
+                            <asp:TextBox ID="textRepresentativeName" Text='<%# Bind("representativeName")%>' class="form-control" runat="server">
                             </asp:TextBox>
                         </EditItemTemplate>
                     </asp:TemplateField>
@@ -164,7 +165,7 @@
                             </asp:Label>
                         </ItemTemplate>
                         <EditItemTemplate>
-                            <asp:TextBox ID="textRepresentativePhone" Text='<%# Bind("representativePhone")%>' runat="server">
+                            <asp:TextBox ID="textRepresentativePhone" Text='<%# Bind("representativePhone")%>' class="form-control" runat="server">
                             </asp:TextBox>
                         </EditItemTemplate>
                     </asp:TemplateField>

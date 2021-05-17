@@ -25,7 +25,7 @@ namespace VirtualStore_RP.BLL
 
         public void Update(ProviderDTO provider)
         {
-            string sql = string.Format($@"UPDATE provider SET name='{provider.Name}', cnpj='{provider.Cnpj}', email='{provider.Email}', phone='{provider.Phone}', representativeName='{provider.RepresentativeName}', representativePhone='{provider.RepresentativePhone}' WHERE id = '{provider.Id}';");
+            string sql = string.Format($@"UPDATE provider SET namePro='{provider.Name}', cnpj='{provider.Cnpj}', email='{provider.Email}', phone='{provider.Phone}', representativeName='{provider.RepresentativeName}', representativePhone='{provider.RepresentativePhone}' WHERE id = '{provider.Id}';");
             connection.ExecutionSQL(sql);
         }
         public string ReturnID(string email)
@@ -54,9 +54,15 @@ namespace VirtualStore_RP.BLL
             return connection.QueryExecution(sql);
         }
 
+        public DataTable Consult()
+        {
+            string sql = string.Format($@"SELECT * FROM provider");
+            return connection.QueryExecution(sql);
+        }
+
         public DataTable SearchProvider(string conditional)
         {
-            string sql = string.Format($@"SELECT p.id, p.name, p.cnpj, p.email, p.phone, p.representativeName, p.representativePhone FROM provider as p WHERE {conditional} ORDER BY p.id;");
+            string sql = string.Format($@"SELECT p.id, p.namePro, p.cnpj, p.email, p.phone, p.representativeName, p.representativePhone FROM provider as p WHERE {conditional} ORDER BY p.id;");
             return connection.QueryExecution(sql);
         }
     }

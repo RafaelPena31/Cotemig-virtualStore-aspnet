@@ -69,6 +69,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+
+    <Content Include="IMG\cancel.png" />
+    <Content Include="IMG\edit.png" />
+    <Content Include="IMG\Products\todinho.png" />
+    <Content Include="IMG\trash.png" />
+    <Content Include="IMG\update.png" />
     <Content Include="UI\addressRegister.aspx" />
     <Content Include="UI\adminCategory.aspx" />
     <Content Include="UI\adminClient.aspx" />
@@ -83,6 +89,7 @@
     <Content Include="UI\productRegister.aspx" />
     <Content Include="UI\profile.aspx" />
     <Content Include="UI\providerRegister.aspx" />
+    <Content Include="UI\searchCategory.aspx" />
     <Content Include="UI\searchProduct.aspx" />
     <Content Include="UI\searchProvider.aspx" />
     <Content Include="Web.config" />
@@ -198,6 +205,13 @@
     <Compile Include="UI\providerRegister.aspx.designer.cs">
       <DependentUpon>providerRegister.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UI\searchCategory.aspx.cs">
+      <DependentUpon>searchCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\searchCategory.aspx.designer.cs">
+      <DependentUpon>searchCategory.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UI\searchProduct.aspx.cs">
       <DependentUpon>searchProduct.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -222,9 +236,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="IMG\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

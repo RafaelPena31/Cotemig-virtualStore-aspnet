@@ -11,7 +11,7 @@ namespace VirtualStore_RP.UI
 {
 
 
-    public partial class searchProduct
+    public partial class searchCategory
     {
 
         /// <summary>
@@ -42,13 +42,13 @@ namespace VirtualStore_RP.UI
         protected global::System.Web.UI.WebControls.HyperLink IndexRedirect;
 
         /// <summary>
-        /// Controle txtProductSearch.
+        /// Controle txtCategorySearch.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtProductSearch;
+        protected global::System.Web.UI.WebControls.TextBox txtCategorySearch;
 
         /// <summary>
         /// Controle btnSearch.
@@ -60,12 +60,12 @@ namespace VirtualStore_RP.UI
         protected global::System.Web.UI.WebControls.Button btnSearch;
 
         /// <summary>
-        /// Controle gridViewProduct.
+        /// Controle gridViewCategory.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gridViewProduct;
+        protected global::System.Web.UI.WebControls.GridView gridViewCategory;
     }
 }
