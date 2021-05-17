@@ -19,7 +19,7 @@ USE `VirtualStore` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `VirtualStore`.`provider` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(50) NOT NULL,
+  `namePro` VARCHAR(50) NOT NULL,
   `cnpj` CHAR(18) NOT NULL,
   `email` VARCHAR(45) NOT NULL,
   `phone` VARCHAR(11) NOT NULL,
@@ -34,7 +34,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `VirtualStore`.`category` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(50) NOT NULL,
+  `nameCat` VARCHAR(50) NOT NULL,
   `description` VARCHAR(80) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
@@ -70,6 +70,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `VirtualStore`.`client` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(50) NOT NULL,
+  `type` VARCHAR(10) NOT NULL,
   `cpf` CHAR(11) NOT NULL,
   `phone` VARCHAR(11) NOT NULL,
   `email` VARCHAR(45) NOT NULL,
